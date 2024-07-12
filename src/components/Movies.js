@@ -26,6 +26,7 @@ function Movies() {
 
         axios.get(`https://movie-task.vercel.app/api/popular?page=${page}`).then((res) => {
             setMovies(res.data.data.results);
+            console.log(res.data.data.results)
         }).catch((err) => {
             console.error("Failed to fetch movies:", err);
         });

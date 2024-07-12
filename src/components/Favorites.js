@@ -38,10 +38,11 @@ function Favorites() {
         oldFav = JSON.parse(oldFav) || [];
         setFavorites(oldFav);
     }, []);
+console.log(favorites)
 
     useEffect(() => {
-      let temp = favorites.map((movie) => movie.genre_ids && movie.genre_ids[0] ? genreids[movie.genre_ids[0]] : 'Unknown');
-      temp = new Set(temp);
+        let temp = favorites.map((movie) => movie.genre_ids && movie.genre_ids[0] ? genreids[movie.genre_ids[0]] : 'Unknown');
+        temp = new Set(temp);
         setGenres(["All Genres", ...temp]);
     }, [favorites]);
 
